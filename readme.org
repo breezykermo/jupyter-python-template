@@ -1,0 +1,6 @@
+Basic starter for jupyter-based python projects with nix.
+
+** Add a package
+#+begin_src sh
+uv add numpy
+#+end_src
