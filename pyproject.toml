@@ -1,7 +1,7 @@
 [project]
-name = "tyler-course"
+name = "jupyter-nix-starter"
 version = "0.1.0"
-description = "Tyler course development environment"
+description = "Jupyter development environment"
 requires-python = ">=3.11,<3.12"
 dependencies = [
     "jupyterlab>=4.0.0",
@@ -16,3 +16,9 @@ dependencies = [
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["lib"]
+
+[tool.setuptools.package-data]
+lib = ["py.typed"]

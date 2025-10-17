@@ -35,6 +35,10 @@
         let
           pkgs = nixpkgs.legacyPackages.${system};
 
+          # Read project metadata from pyproject.toml
+          pyproject = lib.importTOML ./pyproject.toml;
+          projectName = pyproject.project.name;
+
           # Read python version from .python-version
           pythonVersion = lib.strings.trim (builtins.readFile ./.python-version);
           python = pkgs."python${lib.strings.replaceStrings ["."] [""] pythonVersion}";
@@ -59,7 +63,7 @@
             );
 
           # Build virtual environment
-          virtualenv = pythonSet.mkVirtualEnv "tyler-course-env" workspace.deps.default;
+          virtualenv = pythonSet.mkVirtualEnv "${projectName}-env" workspace.deps.default;
 
         in
         {
