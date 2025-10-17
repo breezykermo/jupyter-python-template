@@ -5,6 +5,12 @@ description = "Tyler course development environment"
 requires-python = ">=3.11,<3.12"
 dependencies = [
     "jupyterlab>=4.0.0",
+    "matplotlib>=3.10.7",
+    "nltk>=3.9.2",
+    "numpy>=2.3.4",
+    "pandas>=2.3.3",
+    "pathlib>=1.0.1",
+    "seaborn>=0.13.2",
 ]
 
 [build-system]
